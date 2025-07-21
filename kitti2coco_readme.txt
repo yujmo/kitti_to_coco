@@ -1,5 +1,5 @@
+
 # kitti2coco
-Convert KITTI object detection dataset to COCO format for 2D object detection task.
 
 Convert the [KITTI object detection dataset](http://www.cvlibs.net/datasets/kitti/eval_object.php) to the [COCO annotation format](https://mmdetection.readthedocs.io/en/latest/user_guides/train.html#coco-annotation-format) for 2D object detection tasks.
 
@@ -11,7 +11,6 @@ Convert the [KITTI object detection dataset](http://www.cvlibs.net/datasets/kitt
 - Split the dataset into train and validation sets with configurable ratio.
 - Convert KITTI labels to COCO-compliant JSON annotation files.
 - Well-documented, modular code suitable for research and practical use.
-
 
 ---
 
@@ -35,6 +34,7 @@ annotation = {
 ## Pipeline Overview
 
 This repository provides **three scripts** to process the dataset step-by-step:
+
 1. **modify_annotations_txt.py**  
    Merge similar classes in KITTI:
    - 'Van', 'Truck', 'Tram' → 'Car'
@@ -48,8 +48,11 @@ This repository provides **three scripts** to process the dataset step-by-step:
    Convert train/val labels and images to COCO format and save as JSON files.
 
 ---
+
 ## Step-by-step Usage
+
 ### 1. Prepare Initial KITTI Data Structure
+
 Organize your data as follows before any processing:
 
 ```
@@ -78,20 +81,6 @@ The result will be:
 data_root/
 ├── mergeimage_2/   # all images copied from image_2
 └── mergelabel_2/   # normalized/merged label files
-```
-
-
-
-**Second step : execute `split_datasets.py`. Then we can obtain the structure as follow:**
-
-```
-dest_dir
-├── annotations
-├── labels
-│   ├── train_labels
-│   └── val_labels
-├── train2017
-└── val2017
 ```
 
 ### 3. Split Dataset into Train and Val
@@ -165,15 +154,3 @@ This project is released under the MIT License.
 ---
 
 Feel free to open issues or submit PRs for improvements!
-
-
-## Acknowledgements
-
-This project was inspired by and refers to the following excellent open-source repositories:
-
-- [Tianda-Fu/Convert-KITTI-label-to-COCO](https://github.com/Tianda-Fu/Convert-KITTI-label-to-COCO/)
-- [kouyuanbo/kitti2coco](https://github.com/kouyuanbo/kitti2coco/)
-- [zlg9folira/kitti2cocojson](https://github.com/zlg9folira/kitti2cocojson)
-- [Tomn223/K2C](https://github.com/Tomn223/K2C/)
-
-Special thanks to the authors and contributors of these projects for their valuable work!
