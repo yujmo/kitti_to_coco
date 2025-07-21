@@ -81,19 +81,6 @@ data_root/
 ```
 
 
-
-**Second step : execute `split_datasets.py`. Then we can obtain the structure as follow:**
-
-```
-dest_dir
-├── annotations
-├── labels
-│   ├── train_labels
-│   └── val_labels
-├── train2017
-└── val2017
-```
-
 ### 3. Split Dataset into Train and Val
 
 Run `split_datasets.py` to split images and labels into train/val sets:
